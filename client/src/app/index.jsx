@@ -68,7 +68,10 @@ class Main extends React.Component {
               <Route path="/dashboard/:userName/folder/:folderShortId" component={withTracker(LazyLoadedDashboard)} />
               <Route path="/dashboard/" component={withTracker(LazyLoadedDashboard)} />
               <Route path="/payment/" component={withTracker(LazyLoadedPaymentPage)} />
-              <Route path="/profile/:userName/folder/:folderShortId" component={withTracker(LazyLoadedPaymentProfile)} />
+              <Route
+                path="/profile/:userName/folder/:folderShortId"
+                component={withTracker(LazyLoadedPaymentProfile)}
+              />
               <Route path="/profile/:userName" component={withTracker(LazyLoadedPaymentProfile)} />
               <Route path="*" component={withTracker(LazyLoadedPage404)} />
             </Switch>

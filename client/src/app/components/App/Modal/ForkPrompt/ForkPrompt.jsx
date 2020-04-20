@@ -32,10 +32,10 @@ class ForkPrompt extends React.Component {
       <div className="fork-prompt__content">
         <div>
           <h2 className="fork-prompt__title">
-             Would you like to remix the page?
+            Would you like to remix the page?
           </h2>
           <p className="fork-prompt__subtitle">
-             Remixing this page will save a copy to your account and allow you to save your changes.
+            Remixing this page will save a copy to your account and allow you to save your changes.
           </p>
           <div
             className="fork-prompt__button-container"

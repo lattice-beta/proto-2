@@ -68,7 +68,7 @@ class Welcome extends Component {
         {(this.state.screenNumber === 0) && (
           <div className="welcome__sub-container-horiz">
             <h1 className="welcome__title">
-            Welcome To Peblio!
+              Welcome To Peblio!
             </h1>
             <h2 className="welcome__subtitle">
               The easiest way to write about code
@@ -86,7 +86,7 @@ class Welcome extends Component {
               className="welcome__button welcome__blue-button"
               onClick={this.props.closeWelcomeModal}
             >
-          Skip
+              Skip
             </button>
             <p className="welcome__text">
               {'You can always open this your with Help > Tutorial in the toolbar'}
@@ -106,7 +106,7 @@ class Welcome extends Component {
                 className={classNames(buttonClass)}
                 onClick={this.increaseScreenNumber}
               >
-              Next
+                Next
               </button>
             </div>
             <div className="welcome__right">
@@ -121,25 +121,25 @@ class Welcome extends Component {
         {(this.state.screenNumber === 4) && (
           <div className="welcome__sub-container-horiz">
             <h1 className="welcome__title">
-            Get Started
+              Get Started
             </h1>
             <button
               className="welcome__button welcome__green-button welcome__button-large"
               onClick={this.props.closeWelcomeModal}
             >
-          Close
+              Close
             </button>
             <button
               className="welcome__button welcome__green-button welcome__button-large"
               onClick={this.resetScreenNumber}
             >
-          Replay
+              Replay
             </button>
             <button
               className="welcome__button welcome__green-button welcome__button-large"
               onClick={this.startTour}
             >
-          Start Creating with our guided tour
+              Start Creating with our guided tour
             </button>
           </div>
         )}

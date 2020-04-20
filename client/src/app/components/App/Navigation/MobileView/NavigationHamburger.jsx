@@ -53,7 +53,7 @@ class NavigationHamburger extends React.Component {
             >
               <i className="fas fa-bars"></i>
               {' '}
-                Open
+              Open
             </button>
           )}
           <button
@@ -82,7 +82,7 @@ class NavigationHamburger extends React.Component {
             }}
             data-test="main-toolbar__mobile-share-button"
           >
-              Share
+            Share
           </button>
         </Menu>
       </div>

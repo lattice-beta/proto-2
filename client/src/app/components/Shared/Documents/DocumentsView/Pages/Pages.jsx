@@ -32,10 +32,10 @@ class Pages extends Component {
         {this.props.pages && (
           <div className="profile-pebl__li-heading-container">
             <h4 className="profile-pebl__li-heading">
-            name
+              name
             </h4>
             <h4 className="profile-pebl__li-heading">
-            Last Modified
+              Last Modified
             </h4>
           </div>
         )}

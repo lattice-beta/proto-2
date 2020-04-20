@@ -80,7 +80,7 @@ class EditorToolbar extends React.Component {
               <span
                 className='beta-tag'
               >
-             beta
+                beta
               </span>
             )}
             {this.props.container === 'workspace' && (

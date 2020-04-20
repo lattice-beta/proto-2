@@ -23,7 +23,7 @@ class Tags extends React.Component {
   }
 
   componentDidMount() {
-    if(this.input) {
+    if (this.input) {
       this.input.handleKeyDown = (e) => {
         this.handleEnter(e);
       };

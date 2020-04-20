@@ -300,7 +300,7 @@ class MainToolbar extends React.Component {
                 onClick={this.sharePebl}
                 data-test="main-toolbar__share-button"
               >
-              Share
+                Share
               </button>
               <div className="main-toolbar__spacer"></div>
               <div className="main-toolbar__pref-container">

@@ -196,7 +196,7 @@ class SignUp extends React.Component {
             rel="noopener noreferrer"
             className="signup-modal__link"
           >
-          Privacy Policy
+            Privacy Policy
           </a>
         </label>
         <div className="signup-modal__buttonholder">
@@ -206,7 +206,7 @@ class SignUp extends React.Component {
             value="Submit"
             onClick={this.onNextButtonClick}
           >
-          Next
+            Next
           </button>
         </div>
       </div>

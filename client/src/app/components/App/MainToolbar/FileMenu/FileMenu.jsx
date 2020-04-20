@@ -25,7 +25,7 @@ class FileMenu extends React.Component {
           >
             <i className="fas fa-plus"></i>
             {' '}
-          New
+            New
           </a>
         </li>
         {this.props.name && (

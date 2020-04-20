@@ -102,7 +102,7 @@ class FileUpload extends React.Component {
     <div>
       {!this.props.name && (
         <p className="file-upload__upload-notice">
-            Please Log In to Upload Images
+          Please Log In to Upload Images
         </p>
       )}
 

@@ -27,7 +27,7 @@ class AddDescription extends React.Component {
     return (
       <div className="description-modal__content">
         <h1 className="description-modal__title">
-        Pebl description
+          Pebl description
         </h1>
         <input
           type="text"

@@ -91,7 +91,7 @@ class ConfirmUser extends React.Component {
                 />
               </div>
               <button className="confirm-modal__button" type="submit" value="Submit">
-            Resend Token
+                Resend Token
               </button>
             </form>
           )}

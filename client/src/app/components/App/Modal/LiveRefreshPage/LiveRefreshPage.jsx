@@ -7,7 +7,7 @@ export default class LiveRefreshPage extends React.Component {
   getMessage() {
     return (
       <div className="liveRefreshPage-modal__sub-title">
-      This page has been updated by the author. Would you like to reload the page to view the changes?
+        This page has been updated by the author. Would you like to reload the page to view the changes?
       </div>
     );
   }
@@ -16,11 +16,11 @@ export default class LiveRefreshPage extends React.Component {
     return (
       <div>
         <div className="liveRefreshPage-modal__sub-title">
-        It looks like you made changes to this page in another window.
-        Would you like to refresh this page to view the latest version?
+          It looks like you made changes to this page in another window.
+          Would you like to refresh this page to view the latest version?
         </div>
         <div className="liveRefreshPage-modal__footnote">
-        If you don’t reload, any changes made to this page will override all other versions.
+          If you don’t reload, any changes made to this page will override all other versions.
         </div>
       </div>
     );

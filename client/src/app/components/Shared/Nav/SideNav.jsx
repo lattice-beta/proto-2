@@ -128,7 +128,7 @@ class SideNav extends React.Component {
                 onMouseDown={this.createPage}
                 onKeyDown={this.createPage}
               >
-              File
+                File
               </button>
               <button
                 className="dashboard-nav__add-sub-button"
@@ -153,7 +153,7 @@ class SideNav extends React.Component {
             rel="noopener noreferrer"
             href={`/profile/${this.props.name}`}
           >
-                View Profile
+            View Profile
           </a>
         )}
         {this.getMemoryConsumedMessage()}

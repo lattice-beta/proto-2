@@ -102,7 +102,7 @@ class Login extends React.Component {
                 this.props.closeLoginModal();
               }}
             >
-            forgot password?
+              forgot password?
             </button>
           </div>
         </form>

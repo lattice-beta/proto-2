@@ -194,7 +194,7 @@ class PeblioSignUpForm extends React.Component {
               onClick={this.submitSignUpUser}
               value="Submit"
             >
-                  Sign in with Peblio
+              Sign in with Peblio
             </button>
           </div>
         </div>

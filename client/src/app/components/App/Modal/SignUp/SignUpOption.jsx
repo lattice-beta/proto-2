@@ -45,7 +45,7 @@ class SignUpOption extends React.Component {
     return (
       <div>
         <h2 className="signup-modal__subtitle">
-        Almost signed up!
+          Almost signed up!
         </h2>
         <GoogleSignupButton
           onLoginSuccess={this.googleLoginSuccessful}
@@ -71,7 +71,7 @@ class SignUpOption extends React.Component {
             onClick={this.onClick}
             data-test="signup-modal__button-peblio"
           >
-                Sign in with Peblio
+            Sign in with Peblio
           </button>
         </div>
         {this.state.showNotice && (

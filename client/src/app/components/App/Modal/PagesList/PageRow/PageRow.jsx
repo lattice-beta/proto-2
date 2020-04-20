@@ -63,7 +63,7 @@ class PageRow extends Component {
   }
 
   render() {
-    const { connectDragSource, isDragging, isSelected, page, width } = this.props;
+    const { connectDragSource, isDragging, isSelected, page } = this.props;
     const colClassName = classNames('pages__col', {
       'pages__col--selected-page': isSelected,
       'pages__col--dragging': isDragging
@@ -123,8 +123,7 @@ PageRow.propTypes = {
     createdAt: PropTypes.instanceOf(Date),
     updatedAt: PropTypes.instanceOf(Date)
   }).isRequired,
-  viewPage: PropTypes.func.isRequired,
-  width: PropTypes.number.isRequired
+  viewPage: PropTypes.func.isRequired
 };
 
 const mapStateToProps = (state, ownProps) => ({

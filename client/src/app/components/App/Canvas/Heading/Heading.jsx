@@ -103,7 +103,7 @@ class Heading extends React.Component {
               />
               Remixed from
               {this.renderAuthor(this.props.parentPageAuthor, this.state.isParentAuthorStudent)}
-            )
+              )
             </p>
           )}
         </div>

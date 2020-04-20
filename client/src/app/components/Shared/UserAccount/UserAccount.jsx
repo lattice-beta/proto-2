@@ -135,7 +135,7 @@ class UserAccount extends React.Component {
                       onKeyDown={this.logout}
                       data-test="user-account__logout-button"
                     >
-                    Logout
+                      Logout
                     </button>
                   </li>
                 </ul>
@@ -149,7 +149,7 @@ class UserAccount extends React.Component {
               onClick={this.props.viewLoginModal}
               data-test="user-account__login-button"
             >
-            Log In
+              Log In
             </button>
             <div className="user-account__spacer"></div>
             <button
@@ -157,7 +157,7 @@ class UserAccount extends React.Component {
               onClick={this.props.viewSignUpModal}
               data-test="user-account__signup-button"
             >
-            Sign Up
+              Sign Up
             </button>
           </div>
         )}

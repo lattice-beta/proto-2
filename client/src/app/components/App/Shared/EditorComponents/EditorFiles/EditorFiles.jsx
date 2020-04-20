@@ -105,7 +105,7 @@ class EditorFiles extends React.Component {
                 }
                 data-test="editor-toolbar__file-name"
               >
-              Preview
+                Preview
               </button>
             </li>
           )}
@@ -135,7 +135,7 @@ class EditorFiles extends React.Component {
               onClick={this.openFileUpload}
               data-test='editor-toolbar__add-file-button'
             >
-            Add File
+              Add File
             </button>
           )
         }

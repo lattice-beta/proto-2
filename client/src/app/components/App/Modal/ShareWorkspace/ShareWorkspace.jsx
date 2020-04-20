@@ -123,13 +123,13 @@ class ShareWorkspace extends React.Component {
                 className='share-workspace__button'
                 onClick={this.props.closeModal}
               >
-              Cancel
+                Cancel
               </button>
               <button
                 className='share-workspace__button'
                 onClick={this.saveAndShareWorkspace}
               >
-              Continue
+                Continue
               </button>
             </div>
           </div>
@@ -149,13 +149,13 @@ class ShareWorkspace extends React.Component {
                   this.props.viewLoginModal();
                 }}
               >
-              Log In
+                Log In
               </button>
               <button
                 className='share-workspace__button'
                 onClick={this.continueAsGuest}
               >
-              Share As Guest
+                Share As Guest
               </button>
             </div>
           </div>

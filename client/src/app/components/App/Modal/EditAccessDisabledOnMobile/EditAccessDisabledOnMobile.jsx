@@ -8,10 +8,10 @@ export default class EditAccessDisabledOnMobile extends React.Component {
     return (
       <div>
         <div className="editAccessWarning-modal__sub-title">
-        It looks like you are trying to edit a page on a Mobile device.
+          It looks like you are trying to edit a page on a Mobile device.
         </div>
         <div className="editAccessWarning-modal__footnote">
-        Please try doing this on a Desktop
+          Please try doing this on a Desktop
         </div>
       </div>
     );

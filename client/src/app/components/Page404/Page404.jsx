@@ -19,7 +19,7 @@ class Page404 extends React.Component {
         </div>
         <div className="page404__sub-container">
           <h1 className="page404__heading">
-          Sorry, the page you are looking for is not available.
+            Sorry, the page you are looking for is not available.
           </h1>
         </div>
       </div>

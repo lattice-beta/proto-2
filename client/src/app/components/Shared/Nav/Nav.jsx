@@ -162,7 +162,7 @@ render() {
               />
               <div className="dashboard-nav__sub-container">
                 <p className="dashboard-nav__dropdown-label">
-              Arrange By
+                  Arrange By
                 </p>
                 <select
                   className="dashboard-nav__dropdown"

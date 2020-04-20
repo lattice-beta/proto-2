@@ -126,7 +126,7 @@ class StudentBirthDateDetails extends React.Component {
             onClick={this.onNextButtonClick}
             value="Submit"
           >
-                Next
+            Next
           </button>
         </div>
       </div>

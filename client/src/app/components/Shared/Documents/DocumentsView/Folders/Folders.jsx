@@ -15,13 +15,13 @@ class Folders extends Component {
         <ul className={classNames(documentViewCLass)}>
           <div className="profile-folders__li-heading-container">
             <h4 className="profile-folders__li-heading">
-            name
+              name
             </h4>
             <h4 className="profile-folders__li-heading">
-            Last Modified
+              Last Modified
             </h4>
             <h4 className="profile-folders__li-heading">
-            # Of files
+              # Of files
             </h4>
           </div>
           {this.props.folders.map((folder, key) => (
