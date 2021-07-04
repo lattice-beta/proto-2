@@ -29,6 +29,8 @@ class EditorContainer extends React.Component {
     this.addFileToEditor = (name, content) => this.props.addFileToEditor(this.props.id, name, content);
     this.deleteFileFromEditor = index => this.props.deleteFileFromEditor(this.props.id, index);
     this.playCode = () => this.props.playCode(this.props.id);
+    this.enablePythonInteractiveRunMode = () => this.props.enablePythonInteractiveRunMode(this.props.id);
+    this.disablePythonInteractiveRunMode = () => this.props.disablePythonInteractiveRunMode(this.props.id);
     this.stopCode = () => this.props.stopCode(this.props.id);
     this.setEditorView = value => this.props.setEditorView(this.props.id, value);
     this.setInnerWidth = value => this.props.setInnerWidth(this.props.id, value);
@@ -43,6 +45,9 @@ class EditorContainer extends React.Component {
       // UPDATE: 29-Oct-18 : Not using Javascript editor now, but keep in mind if added
       // Dec-17 : There's a memory leak in the Javascript editor. Watch the console after clicking Play.
       this.props.updateConsoleOutput(this.props.id, e);
+    };
+    this.updateConsoleOutputForPython = (e) => {
+      this.props.updateConsoleOutputForPython(this.props.id, e);
     };
     this.viewEditorPreview = () => this.props.viewEditorPreview(this.props.id);
   }
@@ -103,6 +108,8 @@ class EditorContainer extends React.Component {
             isPlaying={this.props.isPlaying}
             isWidgetFullScreenMode={this.props.isWidgetFullScreenMode}
             playCode={this.playCode}
+            enablePythonInteractiveRunMode={this.enablePythonInteractiveRunMode}
+            disablePythonInteractiveRunMode={this.disablePythonInteractiveRunMode}
             setCurrentFile={this.setCurrentFile}
             setEditorView={this.setEditorView}
             setYPosition={this.props.setYPosition}
@@ -146,6 +153,7 @@ class EditorContainer extends React.Component {
                 isEditorFilesOpen={this.state.isEditorFilesOpen}
                 isResizing={this.state.isResizing}
                 isPlaying={this.props.isPlaying}
+                pythonRunMode={this.props.pythonRunMode}
                 isRefreshing={this.props.isRefreshing}
                 openFileView={this.openFileView}
                 setCurrentFile={this.setCurrentFile}
@@ -155,6 +163,7 @@ class EditorContainer extends React.Component {
                 toggleConsole={this.toggleConsole}
                 toggleEditorFilesView={this.toggleEditorFilesView}
                 updateConsoleOutput={this.updateConsoleOutput}
+                updateConsoleOutputForPython={this.updateConsoleOutputForPython}
                 updateFile={this.updateFile}
                 viewEditorPreview={this.viewEditorPreview}
               />
@@ -171,6 +180,7 @@ class EditorContainer extends React.Component {
                 finishResize={this.finishResize}
                 isConsoleOpen={this.state.isConsoleOpen}
                 isEditorFilesOpen={this.state.isEditorFilesOpen}
+                pythonRunMode={this.props.pythonRunMode}
                 isPlaying={this.props.isPlaying}
                 isResizing={this.state.isResizing}
                 isRefreshing={this.props.isRefreshing}
@@ -184,6 +194,7 @@ class EditorContainer extends React.Component {
                 toggleEditorFilesView={this.toggleEditorFilesView}
                 updateFile={this.updateFile}
                 updateConsoleOutput={this.updateConsoleOutput}
+                updateConsoleOutputForPython={this.updateConsoleOutputForPython}
                 viewEditorPreview={this.viewEditorPreview}
               />
             )}
@@ -205,6 +216,7 @@ EditorContainer.propTypes = {
   currentFile: PropTypes.number.isRequired,
   deleteFileFromEditor: PropTypes.func.isRequired,
   editorMode: PropTypes.string.isRequired,
+  pythonRunMode: PropTypes.string.isRequired,
   editorTheme: PropTypes.string.isRequired,
   editorView: PropTypes.string.isRequired,
   files: PropTypes.arrayOf(PropTypes.shape({
@@ -227,11 +239,14 @@ EditorContainer.propTypes = {
   stopCodeRefresh: PropTypes.func.isRequired,
   toggleWidgetFullscreen: PropTypes.func.isRequired,
   updateConsoleOutput: PropTypes.func.isRequired,
+  updateConsoleOutputForPython: PropTypes.func.isRequired,
   updateFile: PropTypes.func.isRequired,
   viewEditorPreview: PropTypes.func.isRequired,
   loadMemoryConsumed: PropTypes.func.isRequired,
   memoryConsumed: PropTypes.number.isRequired,
   totalMemory: PropTypes.number.isRequired,
+  enablePythonInteractiveRunMode: PropTypes.func.isRequired,
+  disablePythonInteractiveRunMode: PropTypes.func.isRequired,
 };
 
 function mapStateToProps(state) {

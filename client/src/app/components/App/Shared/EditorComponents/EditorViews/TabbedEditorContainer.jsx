@@ -48,12 +48,14 @@ class TabbedContainer extends React.Component {
                 id={this.props.id}
                 clearConsoleOutput={this.props.clearConsoleOutput}
                 editorMode={this.props.editorMode}
+                pythonRunMode={this.props.pythonRunMode}
                 files={this.props.files}
                 isPlaying={this.props.isPlaying}
                 isRefreshing={this.props.isRefreshing}
                 stopCodeRefresh={this.props.stopCodeRefresh}
                 updateConsoleOutput={this.props.updateConsoleOutput}
                 consoleOutputText={this.props.consoleOutputText}
+                updateConsoleOutputForPython={this.props.updateConsoleOutputForPython}
               />
             )}
             <ConsoleOutput
@@ -76,6 +78,7 @@ TabbedContainer.propTypes = {
   consoleOutputText: PropTypes.arrayOf(PropTypes.string).isRequired,
   currentFile: PropTypes.number.isRequired,
   editorMode: PropTypes.string.isRequired,
+  pythonRunMode: PropTypes.string.isRequired,
   files: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string.isRequired,
     content: PropTypes.string.isRequired
@@ -90,6 +93,7 @@ TabbedContainer.propTypes = {
   stopCodeRefresh: PropTypes.func.isRequired,
   toggleConsole: PropTypes.func.isRequired,
   updateConsoleOutput: PropTypes.func.isRequired,
+  updateConsoleOutputForPython: PropTypes.func.isRequired,
   toggleEditorFilesView: PropTypes.func.isRequired,
   updateFile: PropTypes.func.isRequired,
   viewEditorPreview: PropTypes.func.isRequired

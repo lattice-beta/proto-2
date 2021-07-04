@@ -28,7 +28,7 @@ test('through the login form with a valid email and password', async (t) => {
     .expect(Selector('[data-test=account-button]').exists).ok();
 });
 
-test.only('through the login form with a invalid email and password should show error', async (t) => {
+test('through the login form with a invalid email and password should show error', async (t) => {
   await t
     .click(Selector('[data-test=close-modal]'))
     .click(Selector('[data-test=user-account__login-button]'))

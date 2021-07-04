@@ -118,6 +118,7 @@ const editorsReducer = (state = initialState, action) => {
         isPlaying: false,
         isRefreshing: false,
         editorMode: action.mode,
+        pythonRunMode: action.mode === 'python' ? 'non-interactive' : '',
         innerWidth: CODE_DEFAULT_INSIDE_WIDTH,
         editorView: 'split',
         isWidgetFullScreenMode: false
@@ -151,6 +152,14 @@ const editorsReducer = (state = initialState, action) => {
       editors[action.id].isPlaying = true;
       return { ...state, editors };
 
+    case ActionTypes.ENABLE_PYTHON_INTERACTIVE_RUN_MODE:
+      editors[action.id].pythonRunMode = 'interactive';
+      return { ...state, editors };
+
+    case ActionTypes.DISABLE_PYTHON_INTERACTIVE_RUN_MODE:
+      editors[action.id].pythonRunMode = 'non-interactive';
+      return { ...state, editors };
+
     case ActionTypes.STOP_CODE:
       editors[action.id].isPlaying = false;
       editors[action.id].consoleOutputText = [];
@@ -170,6 +179,13 @@ const editorsReducer = (state = initialState, action) => {
       if (action.event.data.arguments && (action.event.data.id === action.id)) {
         tempOutput.push(action.event.data.arguments.join());
       }
+      editors[action.id].consoleOutputText = tempOutput;
+      return { ...state, editors };
+    }
+
+    case ActionTypes.UPDATE_CONSOLE_OUTPUT_FOR_PYTHON: {
+      const tempOutput = editors[action.id].consoleOutputText.slice();
+      tempOutput.push(action.output);
       editors[action.id].consoleOutputText = tempOutput;
       return { ...state, editors };
     }

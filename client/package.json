@@ -16,6 +16,7 @@
   "license": "ISC",
   "dependencies": {
     "@material-ui/core": "^4.9.13",
+    "awesome-react-repl": "^0.1.10",
     "axios": "^0.18.1",
     "babel-polyfill": "^6.26.0",
     "classnames": "^2.2.6",
@@ -70,6 +71,7 @@
     "sass-lint": "^1.12.1",
     "sasslint-webpack-plugin": "^1.0.4",
     "shortid": "^2.2.8",
+    "skulpt": "^1.2.0",
     "srcdoc-polyfill": "^0.2.0",
     "superagent": "^3.8.2"
   },

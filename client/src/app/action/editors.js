@@ -134,6 +134,24 @@ export function playCode(id) {
   };
 }
 
+export function enablePythonInteractiveRunMode(id) {
+  return (dispatch) => {
+    dispatch({
+      type: ActionTypes.ENABLE_PYTHON_INTERACTIVE_RUN_MODE,
+      id
+    });
+  };
+}
+
+export function disablePythonInteractiveRunMode(id) {
+  return (dispatch) => {
+    dispatch({
+      type: ActionTypes.DISABLE_PYTHON_INTERACTIVE_RUN_MODE,
+      id
+    });
+  };
+}
+
 export function stopCode(id) {
   return (dispatch) => {
     dispatch({
@@ -167,6 +185,16 @@ export function updateConsoleOutput(id, event) {
       type: ActionTypes.UPDATE_CONSOLE_OUTPUT,
       id,
       event
+    });
+  };
+}
+
+export function updateConsoleOutputForPython(id, output) {
+  return (dispatch) => {
+    dispatch({
+      type: ActionTypes.UPDATE_CONSOLE_OUTPUT_FOR_PYTHON,
+      id,
+      output
     });
   };
 }

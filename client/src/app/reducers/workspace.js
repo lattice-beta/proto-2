@@ -1,4 +1,3 @@
-import { EditorState } from 'draft-js';
 import * as ActionTypes from '../constants/reduxConstants.js';
 import * as Code from '../constants/codeConstants.js';
 import * as Page from '../constants/pageConstants.js';
@@ -33,6 +32,9 @@ const workspaceReducer = (state = initialState, action) => {
       workspace.editorMode = action.value;
       workspace.currentFile = Code.STARTFILE[action.value];
       workspace.files = Code.FILES[action.value];
+      if (workspace.editorMode === 'python') {
+        workspace.pythonRunMode = 'non-interactive';
+      }
       return { ...state, workspace };
 
     case ActionTypes.WP_UPDATE_CONSOLE_OUTPUT: {

@@ -164,6 +164,7 @@ class Workspace extends React.Component {
                             id='workspace'
                             clearConsoleOutput={this.props.clearConsoleOutput}
                             editorMode={this.props.editorMode}
+                            pythonRunMode={this.props.pythonRunMode}
                             files={this.props.files}
                             isPlaying={this.props.isPlaying}
                             isRefreshing={this.props.isRefreshing}
@@ -214,6 +215,7 @@ Workspace.propTypes = {
   deleteFileFromEditor: PropTypes.func.isRequired,
   editorFontSize: PropTypes.number.isRequired,
   editorMode: PropTypes.string.isRequired,
+  pythonRunMode: PropTypes.string.isRequired,
   editorTheme: PropTypes.string.isRequired,
   files: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string.isRequired,
@@ -249,6 +251,7 @@ const mapStateToProps = state => ({
   currentFile: state.workspace.workspace.currentFile,
   editorFontSize: state.preferences.editorFontSize,
   editorMode: state.workspace.workspace.editorMode,
+  pythonRunMode: state.workspace.workspace.pythonRunMode,
   editorTheme: state.preferences.editorTheme,
   files: state.workspace.workspace.files,
   innerWidth: state.workspace.workspace.innerWidth,

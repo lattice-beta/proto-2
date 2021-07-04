@@ -1,8 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import srcDoc from 'srcdoc-polyfill';
+import Sk from 'skulpt';
 
-class ProcessingOutput extends React.Component {
+class PythonOutput extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      lines: []
+    };
+  }
+
   componentDidMount() {
     this.startSketch();
   }
@@ -19,76 +26,53 @@ class ProcessingOutput extends React.Component {
     this.stopSketch();
   }
 
-  onIframeLoad = () => {
-    const pythonCode = this.props.files[0].content;
-    this.iframe.contentWindow.executeCode(pythonCode);
+  outf = (text) => {
+    const lines = this.state.lines;
+    lines.push(text);
+    this.setState(() => ({ lines }));
   }
 
+  builtinRead = (x) => {
+    if (Sk.builtinFiles === undefined || Sk.builtinFiles.files[x] === undefined) {
+      throw new Error(`File not found: '${x}'`);
+    }
+    return Sk.builtinFiles.files[x];
+  }
+
+
   startSketch=() => {
-    window.addEventListener('message', this.props.updateConsoleOutput, false);
-    let sketchDoc =
-    `
-    <html>
-      <head>
-        <title>Page Title</title>
-      </head>
-      <body>
-      </body>
-    </html>`;
-    sketchDoc = this.injectLocalFiles(sketchDoc);
-    sketchDoc = `<!DOCTYPE HTML>\n${sketchDoc.documentElement.outerHTML}`;
-    srcDoc.set(this.iframe, sketchDoc);
+    Sk.configure({ output: this.outf, read: this.builtinRead });
+    this.stopSketch();
+    this.state = {
+      lines: []
+    };
+    const myPromise = Sk.misceval.asyncToPromise(() => Sk.importMainWithBody('<stdin>', false, this.props.files[0].content, true));
+    myPromise.then((mod) => {},
+      (err) => {
+        this.props.updateConsoleOutput(err.toString());
+      });
   }
 
   stopSketch=() => {
-    window.removeEventListener('message', this.props.updateConsoleOutput);
     this.props.clearConsoleOutput();
-  }
-
-  injectLocalFiles(sketchDoc) {
-    const scriptsToInject = [
-      '/hijackConsole.js',
-      '/skulpt.min.js',
-      '/skulpt-stdlib.js',
-      '/pythonUtils.js'
-    ];
-    const parser = new DOMParser();
-    const tempSketchDoc = parser.parseFromString(sketchDoc, 'text/html');
-    scriptsToInject.forEach((scriptToInject) => {
-      const script = tempSketchDoc.createElement('script');
-      script.src = scriptToInject;
-      tempSketchDoc.head.appendChild(script);
-    });
-
-    const pythonOutput = tempSketchDoc.createElement('pre');
-    pythonOutput.setAttribute('id', 'python-output');
-    pythonOutput.setAttribute('data-test', 'python-output');
-    tempSketchDoc.body.appendChild(pythonOutput);
-    const pythonGraphicOutput = tempSketchDoc.createElement('div');
-    pythonGraphicOutput.setAttribute('id', 'python-graphic-output');
-    pythonGraphicOutput.setAttribute('data-test', 'python-graphic-output');
-    tempSketchDoc.body.appendChild(pythonGraphicOutput);
-    return tempSketchDoc;
   }
 
   render() {
     return (
-      <div>
-        <iframe
-          title="python output"
-          ref={(element) => { this.iframe = element; }}
-          id="code-output"
-          data-test="sketch-output"
-          name="python-output"
-          onLoad={this.onIframeLoad.bind(this)}
-        >
-        </iframe>
+      <div
+        title="python output"
+        ref={(element) => { this.iframe = element; }}
+        id="code-output"
+        data-test="sketch-output"
+        name="python-output"
+      >
+        {this.state.lines.map(line => <div>{line}</div>)}
       </div>
     );
   }
 }
 
-ProcessingOutput.propTypes = {
+PythonOutput.propTypes = {
   clearConsoleOutput: PropTypes.func.isRequired,
   files: PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string.isRequired,
@@ -96,7 +80,8 @@ ProcessingOutput.propTypes = {
   })).isRequired,
   isRefreshing: PropTypes.bool.isRequired,
   stopCodeRefresh: PropTypes.func.isRequired,
+  id: PropTypes.string.isRequired,
   updateConsoleOutput: PropTypes.func.isRequired
 };
 
-export default ProcessingOutput;
+export default PythonOutput;

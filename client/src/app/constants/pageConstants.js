@@ -10,6 +10,7 @@ export const DEFAULT_WORKSPACE_MODE = {
   isRefreshing: false,
   editorMode: 'p5',
   innerWidth: 500,
+  pythonRunMode: ''
 };
 export const STARTER_WORKSPACE_LAYOUT = [
   {

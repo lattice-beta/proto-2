@@ -77,7 +77,7 @@ export class InsertToolbar extends React.Component {
                     }}
                     data-test="add-html-editor"
                   >
-                 HTML
+                    HTML
                   </button>
                 </li>
                 <li className="insert-toolbar__list-item">
@@ -93,7 +93,7 @@ export class InsertToolbar extends React.Component {
                     }}
                     data-test="add-webdev-editor"
                   >
-                 HTML/JS/CSS
+                    HTML/JS/CSS
                   </button>
                 </li>
                 <li className="insert-toolbar__list-item">
@@ -109,7 +109,7 @@ export class InsertToolbar extends React.Component {
                     }}
                     data-test="add-p5-editor"
                   >
-                 P5
+                    P5
                   </button>
                 </li>
                 <li className="insert-toolbar__list-item">
@@ -125,7 +125,7 @@ export class InsertToolbar extends React.Component {
                     }}
                     data-test="add-processing-editor"
                   >
-                 Processing
+                    Processing
                   </button>
                 </li>
                 <li className="insert-toolbar__list-item">
@@ -141,11 +141,11 @@ export class InsertToolbar extends React.Component {
                     }}
                     data-test="add-python-editor"
                   >
-                 Python
+                    Python
                     <span
                       className="beta-tag"
                     >
-                   beta
+                      beta
                     </span>
                   </button>
                 </li>

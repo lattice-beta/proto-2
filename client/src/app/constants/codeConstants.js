@@ -95,7 +95,7 @@ export const defaultProcessingHTML =
 
 export const defaultPythonPy =
 `
-print "Hello World"
+print("Hello World")
 `;
 
 export const STARTFILE = {
