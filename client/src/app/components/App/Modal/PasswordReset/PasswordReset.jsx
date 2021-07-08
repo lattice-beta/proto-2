@@ -75,6 +75,7 @@ class PasswordReset extends React.Component {
               <input
                 id="reset-modal-password"
                 className="reset-modal__input"
+                data-test="reset-modal__password"
                 type="password"
                 placeholder="new password"
                 ref={(password) => { this.password = password; }}
@@ -84,6 +85,7 @@ class PasswordReset extends React.Component {
               <input
                 id="reset-modal-confirm"
                 className="reset-modal__input"
+                data-test="reset-modal__confirm-password"
                 type="password"
                 placeholder="confirm password"
                 ref={(passwordConfirm) => { this.passwordConfirm = passwordConfirm; }}
@@ -91,7 +93,7 @@ class PasswordReset extends React.Component {
             </label>
           </div>
           <div className="reset-modal__buttonholder">
-            <button className="forgot-modal__button" type="submit" value="Submit">
+            <button className="forgot-modal__button" type="submit" value="Submit" data-test="reset-modal__submit-button">
               Submit
             </button>
           </div>

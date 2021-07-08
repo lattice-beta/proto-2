@@ -1,4 +1,5 @@
 import { ClientFunction } from 'testcafe';
+import axios from 'axios';
 import config from './config';
 
 export * from '../server/src/testUtils';
@@ -18,3 +19,10 @@ export const login = ClientFunction((email, password) => window.fetch(`${baseUrl
     baseUrl: config.baseUrl
   },
 });
+
+export const deleteIntegrationtestUser = async (baseUrl) => {
+  await axios({
+    url: `${baseUrl}/api/integrationTest`,
+    method: 'delete'
+  });
+};

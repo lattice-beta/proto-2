@@ -28,13 +28,14 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "babel-eslint": "^8.2.6",
     "concurrently": "^3.6.1",
     "eslint": "^5.3.0",
     "eslint-config-airbnb-base": "^13.0.0",
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-testcafe": "^0.2.1",
+    "mailslurp-client": "^6.7.0",
     "testcafe": "^0.21.1",
     "testcafe-live": "DevExpress/testcafe-live#e709468968c192a69a23b6f41c1ffdfd09604d03",
     "wait-on": "^2.1.0"

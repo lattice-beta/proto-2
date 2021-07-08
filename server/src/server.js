@@ -22,6 +22,7 @@ const pageVersionRoutes = require('./routes/pageVersionRoutes.js');
 const logRoutes = require('./routes/logRoutes.js');
 const authRoutes = require('./controllers/authController.js');
 const folderRoutes = require('./controllers/folderController');
+const integrationTestRoutes = require('./controllers/integrationTestController');
 const apiRoutes = require('./routes/apiRoutes.js');
 const classroomRoutes = require('./routes/classroomRoutes.js');
 
@@ -60,6 +61,7 @@ app.use(passport.session());
 
 const router = express.Router();
 router.use('/current_user', currentUserRoutes);
+router.use('/integrationTest', integrationTestRoutes);
 router.use('/auth', authRoutes);
 router.use('/users', userRoutes);
 router.use('/pages', pageRoutes);

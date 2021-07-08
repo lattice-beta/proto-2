@@ -46,6 +46,7 @@ class PasswordForgot extends React.Component {
               <input
                 id="forgot-modal-email"
                 className="forgot-modal__input"
+                data-test="forgot-password-email"
                 type="text"
                 placeholder="email"
                 ref={(email) => { this.email = email; }}
@@ -53,7 +54,7 @@ class PasswordForgot extends React.Component {
             </label>
           </div>
           <div className="forgot-modal__buttonholder">
-            <button className="forgot-modal__button" type="submit" value="Submit">
+            <button className="forgot-modal__button" type="submit" value="Submit" data-test="forgot-password-submit">
               Submit
             </button>
           </div>
